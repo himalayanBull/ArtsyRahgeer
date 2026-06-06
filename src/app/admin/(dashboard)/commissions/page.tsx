@@ -14,7 +14,7 @@ export default async function AdminCommissionsPage() {
       <h1 className="font-serif text-3xl mb-8">Commission Requests</h1>
 
       <div className="space-y-4">
-        {(commissions || []).map((commission) => (
+        {(commissions || []).map((commission: any) => (
           <div key={commission.id} className="p-6 rounded-lg border">
             <div className="flex items-start justify-between mb-4">
               <div>

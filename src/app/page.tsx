@@ -26,7 +26,7 @@ export default async function HomePage() {
     .limit(4);
 
   const artworks = featuredArtworks
-    ? featuredArtworks.map((a) => ({
+    ? featuredArtworks.map((a: any) => ({
         ...a,
         tags: a.tags?.map((t: { tag: { id: string; name: string } }) => t.tag) || [],
       }))

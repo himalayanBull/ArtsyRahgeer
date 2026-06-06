@@ -33,7 +33,7 @@ export default async function CollectionsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {(collections || placeholderCollections).map((collection) => (
+          {(collections || placeholderCollections).map((collection: any) => (
             <Link
               key={collection.id}
               href={`/collections/${collection.slug}`}

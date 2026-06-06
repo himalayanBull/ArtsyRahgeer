@@ -24,7 +24,7 @@ export default async function AdminCollectionsPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {(collections || []).map((collection) => (
+        {(collections || []).map((collection: any) => (
           <div key={collection.id} className="border rounded-lg overflow-hidden">
             <div className="relative aspect-video bg-muted">
               {collection.cover_image && (

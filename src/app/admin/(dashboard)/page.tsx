@@ -17,7 +17,7 @@ export default async function AdminDashboard() {
     supabase.from("commission_requests").select("*", { count: "exact", head: true }),
   ]);
 
-  const totalRevenue = revenueData?.reduce((sum, o) => sum + o.amount, 0) || 0;
+  const totalRevenue = revenueData?.reduce((sum: number, o: any) => sum + o.amount, 0) || 0;
 
   const stats = [
     { label: "Total Artworks", value: artworkCount || 0, icon: Palette, href: "/admin/artworks" },

@@ -43,7 +43,7 @@ export default async function AdminArtworksPage() {
             </tr>
           </thead>
           <tbody>
-            {(artworks || []).map((artwork) => (
+            {(artworks || []).map((artwork: any) => (
               <tr key={artwork.id} className="border-t">
                 <td className="p-4">
                   <div className="flex items-center gap-3">

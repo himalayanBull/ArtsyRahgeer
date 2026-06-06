@@ -30,7 +30,7 @@ export default async function GalleryPage() {
     .order("name");
 
   const processedArtworks = artworks
-    ? artworks.map((a) => ({
+    ? artworks.map((a: any) => ({
         ...a,
         tags:
           a.tags?.map((t: { tag: { id: string; name: string } }) => t.tag) || [],

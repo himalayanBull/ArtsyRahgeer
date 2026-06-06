@@ -33,8 +33,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b"
-          : "bg-transparent"
+          ? "bg-background/80 backdrop-blur-xl border-b text-foreground"
+          : "bg-transparent text-white"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -51,7 +51,11 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-sm tracking-wide transition-colors ${
+                  scrolled
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
@@ -62,14 +66,14 @@ export function Navbar() {
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 hover:bg-muted rounded-full transition-colors"
+                className="p-2 hover:bg-white/10 rounded-full transition-colors"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
             )}
 
-            <Link href="/cart" className="relative p-2 hover:bg-muted rounded-full transition-colors">
+            <Link href="/cart" className="relative p-2 hover:bg-white/10 rounded-full transition-colors">
               <ShoppingBag size={18} />
               {items.length > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 h-4 w-4 rounded-full bg-foreground text-background text-[10px] flex items-center justify-center font-medium">

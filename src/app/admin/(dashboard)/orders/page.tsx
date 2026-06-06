@@ -25,7 +25,7 @@ export default async function AdminOrdersPage() {
             </tr>
           </thead>
           <tbody>
-            {(orders || []).map((order) => (
+            {(orders || []).map((order: any) => (
               <tr key={order.id} className="border-t">
                 <td className="p-4 font-medium">{order.customer_name}</td>
                 <td className="p-4 hidden sm:table-cell text-muted-foreground">

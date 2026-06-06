@@ -22,14 +22,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/commission`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
   ];
 
-  const artworkRoutes: MetadataRoute.Sitemap = (artworks || []).map((a) => ({
+  const artworkRoutes: MetadataRoute.Sitemap = (artworks || []).map((a: any) => ({
     url: `${baseUrl}/artwork/${a.slug}`,
     lastModified: new Date(a.created_at),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
-  const collectionRoutes: MetadataRoute.Sitemap = (collections || []).map((c) => ({
+  const collectionRoutes: MetadataRoute.Sitemap = (collections || []).map((c: any) => ({
     url: `${baseUrl}/collections/${c.slug}`,
     lastModified: new Date(c.created_at),
     changeFrequency: "weekly" as const,
